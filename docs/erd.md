@@ -1,0 +1,1 @@
+[Link to the ERD database design](https://drive.google.com/file/d/1Ehn3sfJPepLoMRVOxZMeseR50JQWF0dJ/view?usp=sharing)
