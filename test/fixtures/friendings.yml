@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inviting_user: one
+  invited_user: one
+  status: false
+
+two:
+  inviting_user: two
+  invited_user: two
+  status: false
