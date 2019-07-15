@@ -1,14 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-<<<<<<< HEAD
-  string: 
-  reference: 
-
-two:
-  string: 
-  reference: 
-=======
   body: MyString
   user: one
   post: one
@@ -17,4 +9,3 @@ two:
   body: MyString
   user: two
   post: two
->>>>>>> 860c3578187be579d1f3366b5c1d2fea3ab52f58
