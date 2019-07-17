@@ -4,11 +4,15 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def show
+    # @post = Post.new
+  end
+
   def create
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to posts_index_path
+      redirect_to posts_path
     else 
       render 'new'
     end

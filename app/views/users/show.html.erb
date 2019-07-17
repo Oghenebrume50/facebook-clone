@@ -4,13 +4,13 @@
   <aside>
     <section>
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+        <%= gravatar_for current_user %>
+        <%= current_user.name %>
       </h1>
     </section>
   </aside>
   <div>
-    <% if @user.posts.any? %>
+    <% if current_user.posts.any? %>
       <ol class="posts">
         <%= render @posts %>
       </ol>

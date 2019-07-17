@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get 'posts/index'
+  # get 'posts/index' 
   devise_for :users, skip: :root
+  resources :posts
+  resources :likes
+  resources :comments
 
   devise_scope :user do
     root to: "devise/sessions#new"
