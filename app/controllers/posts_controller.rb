@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       redirect_to posts_index_path
@@ -19,4 +19,9 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  private
+
+  def post_params
+    params.require(:post).permit(:content)
+  end
 end
