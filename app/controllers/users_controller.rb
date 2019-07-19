@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = curent_user.posts.all
+    @user_posts = current_user.posts.all
   end
+
+  def notification
+    @users = User.all
+  end
+
 end

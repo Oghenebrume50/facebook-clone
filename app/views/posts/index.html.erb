@@ -1,7 +1,7 @@
 <h1>All User Posts</h1>
 <h4>Create Post</h4>
 
-<%= form_for Post.new do |f| %>
+<%= form_for [@user, @post] do |f| %>
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new post..." %>
   </div>
@@ -10,10 +10,11 @@
 
 <ul>
 <% @posts.each do |post| %>
+<p>Author: <%= post.author.name %></p>
 <p><%= post.content %></p>
 
 <% if post.likes.where('user_id = ?', current_user.id).length == 0 %>
-<%= link_to "Like", likes_path(:id => post.id), method: :post %>
+<%= link_to "Like", user_post_likes_path(:post_id => post.id, :user_id => current_user.id), method: :post %>
 <%end%>
 
 <p>Likes: <%= post.likes.all.count%>
@@ -24,7 +25,7 @@
 <% end %>
 </ul>
 
-<%= form_for Comment.new do |f| %>
+<%= form_for [@user, post, @comment] do |f| %>
     <%= f.hidden_field :post_id, :value => post.id %>
   <div class="field">
     <%= f.text_area :body, placeholder: "Comment on post" %>

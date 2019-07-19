@@ -12,7 +12,9 @@
   <div>
     <% if current_user.posts.any? %>
       <ol class="posts">
-        <%= render @posts %>
+        <% @user_posts.each do |post| %>
+        <li><%= post.content %></li>
+        <% end %>
       </ol>
     <% end %>
   </div>

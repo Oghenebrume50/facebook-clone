@@ -1,26 +1,27 @@
 class PostsController < ApplicationController
 
-  def new
+  def index
+    @posts = Post.order('created_at DESC').all
     @post = Post.new
+    @comment = Comment.new
+    @user = current_user
   end
 
   def show
-    # @post = Post.new
+  end
+
+  def new
   end
 
   def create
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to posts_path
+      redirect_to user_posts_path(current_user)
     else 
       render 'new'
     end
 
-  end
-
-  def index
-    @posts = Post.all
   end
 
   private
