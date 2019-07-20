@@ -2,8 +2,11 @@
 
 <div>
     <ol>
-    <% @users.each do |user| %>
-    <li><%= user.name %></li>
+    <% @friend_requests.each do |friend| %>
+    <li>
+    <%= friend.name %> | <%= friend.email %>
+    |     <%= link_to "Accept Friend Request", accept_friend_request_path(user_id: friend), method: :patch %>
+    </li>
     <% end %>
     </ol>
 </div>

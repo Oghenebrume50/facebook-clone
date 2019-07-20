@@ -25,16 +25,6 @@ ActiveRecord::Schema.define(version: 2019_07_19_143834) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "friendings", force: :cascade do |t|
-    t.boolean "status"
-    t.bigint "inviting_user_id"
-    t.bigint "invited_user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["invited_user_id"], name: "index_friendings_on_invited_user_id"
-    t.index ["inviting_user_id"], name: "index_friendings_on_inviting_user_id"
-  end
-
   create_table "friendships", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "friend_id"
@@ -77,8 +67,6 @@ ActiveRecord::Schema.define(version: 2019_07_19_143834) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "friendings", "users", column: "invited_user_id"
-  add_foreign_key "friendings", "users", column: "inviting_user_id"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "likes", "posts"
