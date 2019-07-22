@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.order('created_at DESC').all
+    @posts = Post.all
     @post = Post.new
     @comment = Comment.new
     @user = current_user
