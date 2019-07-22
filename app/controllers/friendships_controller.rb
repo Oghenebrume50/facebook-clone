@@ -4,7 +4,7 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friend_request = Friendship.create(confirmed: false, user_id: params[:user_id], friend_id: params[:friend_id])
+    @friend_request = Friendship.create(user_id: params[:user_id], friend_id: params[:friend_id])
     if @friend_request.save
       redirect_back(fallback_location: root_path) #This reloads the current page so as to see the update.
     else
