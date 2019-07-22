@@ -52,7 +52,7 @@
           <li><%= link_to "All Users", users_path() %></li>
           <li><%= link_to "My Post", user_posts_path(current_user) %></li>
           <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "Friends Notifications", user_friendship_path() %></li>
+          <li><%= link_to "Friends Notifications", notification_user_friendship_index_path(current_user) %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <%= link_to "Sign up", new_user_registration_path %> or

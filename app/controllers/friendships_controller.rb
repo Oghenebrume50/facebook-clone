@@ -3,7 +3,7 @@ class FriendshipsController < ApplicationController
     @friend_requests = current_user.friend_requests
   end
 
-  def send_request
+  def create
     @friend_request = Friendship.create(confirmed: false, user_id: params[:user_id], friend_id: params[:friend_id])
     if @friend_request.save
       redirect_back(fallback_location: root_path) #This reloads the current page so as to see the update.
@@ -13,7 +13,7 @@ class FriendshipsController < ApplicationController
 
   end
 
-  def accept_request
+  def update
     @accept_friend = Friendship.find_by(user_id: params[:user_id], friend_id: current_user)
     @accept_friend.update(confirmed: true)
 
