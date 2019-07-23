@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: :root
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }, skip: :root
 
   resources :users, only: [:index, :show] do
     resources :friendship, :only => [:destroy] do
