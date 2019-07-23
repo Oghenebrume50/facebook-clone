@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = current_user.timeline_posts(current_user).flatten
     @post = Post.new
     @comment = Comment.new
     @user = current_user

@@ -17,6 +17,24 @@ class User < ApplicationRecord
     inverse_friendships.map{|friendship| friendship.user if !friendship.confirmed}.compact
   end
 
+  def friends
+    friends_array = friendships.map{|friendship| friendship.friend if friendship.confirmed}
+    friends_array + inverse_friendships.map{|friendship| friendship.user if friendship.confirmed}
+    friends_array.compact
+  end
+
+  def friends_posts
+    @friends = friends
+    if @friends.length > 0
+      @friends_posts = @friends.map { |friend| friend.posts }
+    end
+    @friends_posts ||= []
+  end
+
+  def timeline_posts(user)
+    user.posts + friends_posts  
+  end
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
