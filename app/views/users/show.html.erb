@@ -13,9 +13,13 @@
     <% if current_user.posts.any? %>
       <ol class="posts">
         <% @user_posts.each do |post| %>
-        <li><%= post.content %></li>
-        <% end %>
+        <li>
+          <p><%= post.content %></p>
+          <p>Likes: <%= post.likes.all.count%>
+          <p>Comments: <%= post.comments.all.count %></p>
+        </li>
       </ol>
+        <% end %>
     <% end %>
   </div>
 </div>
