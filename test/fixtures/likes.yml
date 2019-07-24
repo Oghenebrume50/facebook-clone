@@ -1,9 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
+  post: one
+  user: one
+
+two:
+  post: two
+  user: two
+=======
   references: 
   references: 
 
 two:
   references: 
   references: 
+>>>>>>> 860c3578187be579d1f3366b5c1d2fea3ab52f58
