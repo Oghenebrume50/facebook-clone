@@ -45,13 +45,44 @@
   text-decoration: none;
  }
 
+ /*===============
+  Timeline
+ ================*/
+
+ .timeline {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+   width: 40em;
+ }
+
+ .timeline .new_post textarea{
+  width: 30em;
+  height: 10em;
+  margin-bottom: .5em;      
+}
+
+.timeline > ul{
+  align-self: flex-start;
+  margin-left: -2em;
+  width: 80%;
+}
+
+.timeline > ul > li {
+  border: 1px solid black;
+  padding: .5em;
+  width: 100%;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
  ul li {
    list-style: none;
  }
 
- 
-
- h1{
+ nav h1{
    font-size: 2.5em;
    color: #fff;
    margin-left: .5em;
@@ -72,11 +103,6 @@
    height: 15em;
  }
 
- form textarea{
-   width: 200px;
-   height: 100px;
-   margin-bottom: 10px;      
- }
  .alert{
    text-align: center;
    font-weight: bold;
