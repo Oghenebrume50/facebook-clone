@@ -16,6 +16,8 @@ gem 'devise'
 group :development, :test do
   gem 'pg'
   gem 'byebug',  '9.0.6', platform: :mri
+  gem 'rspec-rails', '~> 3.8'
+  gem 'factory_bot_rails'
 end
 
 group :development do
