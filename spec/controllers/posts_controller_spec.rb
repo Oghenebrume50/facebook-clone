@@ -1,7 +1,7 @@
 require 'rails_helper'
 require_relative '../support/devise'
 
-RSpec.describe PostsController do
+RSpec.describe PostsController, type: :controller  do
     login_user
   
     it "should have a current_user" do
