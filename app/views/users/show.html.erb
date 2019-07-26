@@ -1,16 +1,17 @@
 <h2>User Profile</h2>
 
 <div class="row">
+<% if @user %>
   <aside>
     <section>
       <h1>
         <%= gravatar_for current_user %>
-        <%= current_user.name %>
+        <%= @user.name %>
       </h1>
     </section>
   </aside>
   <div>
-    <% if current_user.posts.any? %>
+    <% if @user.posts.any? %>
       <ol class="posts">
         <% @user_posts.each do |post| %>
         <li>
@@ -22,4 +23,7 @@
         <% end %>
     <% end %>
   </div>
+<% else %>
+<p> No User with given id</p>
+<% end %>
 </div>

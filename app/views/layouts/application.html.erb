@@ -10,7 +10,7 @@
   </head>
   <body>
     <nav>
-      <h1>Facebook-clone</h1>
+      <h1><%= link_to "Facebook-clone", user_posts_path(current_user) %></h1>
       <% if user_signed_in? %>
       <ul>
           <li><%= link_to "Profile", user_path(current_user) %></li>

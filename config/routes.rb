@@ -15,11 +15,6 @@ Rails.application.routes.draw do
     end    
   end
 
-  #get 'users/:user_id/notify', to: 'users#notification', as: :friend_request_notify
-  #post 'friend', to: 'users#send_request', as: :send_friend_request
-  #patch 'friend', to: 'users#accept_request', as: :accept_friend_request
-
-
   devise_scope :user do
     root to: "devise/sessions#new"    
   end
