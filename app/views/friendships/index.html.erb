@@ -1,0 +1,12 @@
+<h2>Friend Requests</h2>
+
+<div>
+    <ol>
+    <% @friend_requests.each do |friend| %>
+    <li>
+    <%= friend.name %> | <%= friend.email %>
+    |     <%= link_to "Accept Friend Request", accept_request_user_friendship_index_path(user_id: friend), method: :patch %>
+    </li>
+    <% end %>
+    </ol>
+</div>

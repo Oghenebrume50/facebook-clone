@@ -1,22 +1,27 @@
 class PostsController < ApplicationController
 
-  def new
+  def index
+    @posts = current_user.timeline_posts(current_user).flatten
     @post = Post.new
+    @comment = Comment.new
+    @user = current_user
+  end
+
+  def show
+  end
+
+  def new
   end
 
   def create
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to posts_index_path
+      redirect_to user_posts_path(current_user)
     else 
       render 'new'
     end
 
-  end
-
-  def index
-    @posts = Post.all
   end
 
   private

@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user 
+    if User.exists?(params[:id])
+      @user = User.find(params[:id])
+      @user_posts = @user.posts.all if @user
+    else
+    end
   end
 end

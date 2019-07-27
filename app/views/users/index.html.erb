@@ -1,0 +1,18 @@
+<h2>All Users</h2>
+
+<div>
+    <ol>
+    <% @users.each do |user| %>
+    <% if current_user != user %>
+    <li>
+    <%= user.name %>
+    <% if Friendship.check_friend(:user_id => user.id, :current_user_id => current_user.id) %>
+        | <%= link_to "Send Friend Request", send_request_user_friendship_index_path(:friend_id => user.id, :user_id => current_user.id), method: :post %>
+    <% else %>
+        | <%= link_to "Profile", user_path(user.id)%>    
+    <% end %>
+    </li>
+    <%end%>    
+    <% end %>
+    </ol>
+</div>
