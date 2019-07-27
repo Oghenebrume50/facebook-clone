@@ -13,3 +13,102 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body {
+   margin: 0;
+   border: 0;
+   box-sizing: border-box;
+ }
+
+/*==============
+ Navbar
+================*/
+
+ nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 5em;
+  background-color: #005ccc;
+ } 
+
+ nav ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30em;
+ }
+
+ nav ul li a{
+  color: #fff;
+  text-decoration: none;
+ }
+
+ /*===============
+  Timeline
+ ================*/
+
+ .timeline {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+   width: 40em;
+ }
+
+ .timeline .new_post textarea{
+  width: 30em;
+  height: 10em;
+  margin-bottom: .5em;      
+}
+
+.timeline > ul{
+  align-self: flex-start;
+  margin-left: -2em;
+  width: 80%;
+}
+
+.timeline > ul > li {
+  border: 1px solid black;
+  padding: .5em;
+  width: 100%;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+ ul li {
+   list-style: none;
+ }
+
+ nav h1 > a{
+   font-size: 2.5em;
+   color: #fff;
+   margin-left: .5em;
+   text-decoration: none;
+ }
+
+ .form-container {
+   margin-left: auto;
+   margin-right: auto;
+   width: 12em;
+ }
+
+ .form-container form{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   height: 15em;
+ }
+
+ .alert{
+   text-align: center;
+   font-weight: bold;
+ }
+ .alert.danger {
+   color: red;
+ }
+ .alert.success {
+   color: green;
+ }

@@ -1,0 +1,29 @@
+<h2>User Profile</h2>
+
+<div class="row">
+<% if @user %>
+  <aside>
+    <section>
+      <h1>
+        <%= gravatar_for current_user %>
+        <p><%= @user.name %> | <%= @user.email %></p>
+      </h1>
+    </section>
+  </aside>
+  <div>
+    <% if @user.posts.any? %>
+      <ol class="posts">
+        <% @user_posts.each do |post| %>
+        <li>
+          <p><%= post.content %></p>
+          <p>Likes: <%= post.likes.all.count%>
+          <p>Comments: <%= post.comments.all.count %></p>
+        </li>
+      </ol>
+        <% end %>
+    <% end %>
+  </div>
+<% else %>
+<p> No User with given id</p>
+<% end %>
+</div>
