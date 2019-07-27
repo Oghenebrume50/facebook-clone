@@ -7,11 +7,11 @@ class PostsController < ApplicationController
     @user = current_user
   end
 
-  def show
-  end
+  # def show
+  # end
 
-  def new
-  end
+  # def new
+  # end
 
   def create
     @post = current_user.posts.build(post_params)
