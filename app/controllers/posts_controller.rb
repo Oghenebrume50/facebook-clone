@@ -7,19 +7,13 @@ class PostsController < ApplicationController
     @user = current_user
   end
 
-  def show
-  end
-
-  def new
-  end
-
   def create
     @post = current_user.posts.build(post_params)
 
     if @post.save
       redirect_to user_posts_path(current_user)
     else 
-      render 'new'
+      redirect_back(fallback_location: root_path)
     end
 
   end
