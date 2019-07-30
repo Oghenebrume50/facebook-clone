@@ -13,9 +13,9 @@ gem 'jbuilder',     '2.7.0'
 gem 'omniauth-facebook'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
+gem 'pg'
 
 group :development, :test do
-  gem 'pg'
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
